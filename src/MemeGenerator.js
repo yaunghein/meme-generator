@@ -1,6 +1,5 @@
 import React, { useEffect, useState } from "react";
 import * as htmlToImage from "html-to-image";
-import { toPng } from "html-to-image";
 import download from "downloadjs";
 
 function MemeGenerator() {
@@ -38,7 +37,7 @@ function MemeGenerator() {
         setMemeName(newMemeName);
     }
 
-    function downloadHandler() {
+    function handleDownload() {
         htmlToImage.toPng(document.getElementsByClassName("meme")[0]).then(function (dataUrl) {
             download(dataUrl, memeName);
         });
@@ -68,7 +67,7 @@ function MemeGenerator() {
                 <h1 class="top">{memeText.topText}</h1>
                 <h1 class="bottom">{memeText.bottomText}</h1>
             </div>
-            <a onClick={downloadHandler}>Download</a>
+            <a onClick={handleDownload}>Download</a>
         </div>
     );
 }
