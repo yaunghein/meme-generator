@@ -43,7 +43,11 @@ header > p {
 
 @media (max-width: 786px) {
     header > img {
-        height: 60%;
+        display: none;
+    }
+
+    header {
+        justify-content: center;
     }
 
     header > p {
@@ -90,6 +94,7 @@ header > p {
 @media (max-width: 786px) {
     .container {
         width: 100%;
+        min-height: calc(100vh - 180px);
         padding: 2em;
     }
     .meme {
@@ -109,6 +114,7 @@ form {
     form {
         width: 100%;
         grid-template-columns: 1fr;
+        margin-bottom: 2em;
     }
 }
 
